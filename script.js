@@ -1,14 +1,16 @@
 function getFormvalue() {
-    //Write your code here
-	 const fname = document.forms["nameForm"]["fname"].value.trim();
-      const lname = document.forms["nameForm"]["lname"].value.trim();
+    // Retrieve values from input fields
+      const fname = document.forms["form1"]["fname"].value.trim();
+      const lname = document.forms["form1"]["lname"].value.trim();
 
-      // Combine names
-      const fullName = fname + " " + lname;
+      // Handle empty fields
+      if (!fname || !lname) {
+        alert("⚠️ Please enter both First Name and Last Name");
+      } else {
+        // Display full name
+        alert(fname + " " + lname);
+      }
 
-      // Show alert
-      alert(fullName);
-
-      // Prevent form from refreshing page
+      // Prevent form submission refresh
       return false;
 }
